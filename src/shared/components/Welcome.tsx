@@ -1,8 +1,7 @@
 export function Welcome(){
     return (
       <>
-      <h3>Titolo</h3>
-      <p>Ciao</p>
+        <h3>Benvenuti al corso React</h3>
       </>
     )
   }
