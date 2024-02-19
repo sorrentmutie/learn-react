@@ -1,5 +1,6 @@
 import { FC, useState } from "react"
 import { MenuItem, MenuProps } from "../models/menuItem";
+import { Link } from "react-router-dom";
 
 export const Menu: FC<MenuProps> = ({menuItems, onMenuItemClicked}) => {
     const [menuState, menuStateChange] = useState(false)
@@ -26,7 +27,9 @@ export const Menu: FC<MenuProps> = ({menuItems, onMenuItemClicked}) => {
                 menuItems.map( (menuItem: MenuItem) => {
                     return (
                         <li key={menuItem.key} className="nav-item">
-                            <a className="nav-link" onClick={() => onMenuItemClicked(menuItem.url)}>{menuItem.text}</a>
+                            <Link to={menuItem.url}>
+                                <div className="nav-link"> {menuItem.text}</div>
+                            </Link>
                         </li>            
                     )
                 })
